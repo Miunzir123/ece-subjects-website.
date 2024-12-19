@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Page</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="login-container">
+    <div class="login-box">
+      <h2>Login</h2>
+      <form id="login-form">
+        <div class="input-group">
+          <label for="username">
+            <i class="fas fa-user"></i> Username
+          </label>
+          <input type="text" id="username" placeholder="Type your username" required>
+        </div>
+        <div class="input-group">
+          <label for="password">
+            <i class="fas fa-lock"></i> Password
+          </label>
+          <input type="password" id="password" placeholder="Type your password" required>
+        </div>
+        <div class="forgot-password">
+          <a href="#">Forgot password?</a>
+        </div>
+        <button type="submit" class="btn">LOGIN</button>
+        <div class="social-login">
+          <p>Or Sign Up Using</p>
+          <div class="social-icons">
+            <a href="#" class="facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="google"><i class="fab fa-google"></i></a>
+          </div>
+        </div>
+        <div class="signup-link">
+          <p>Or Sign Up Using <a href="#">Sign Up</a></p>
+        </div>
+      </form>
+    </div>
+  </div>
+  <script src="script.js"></script>
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</body>
+
+</html>
+<section id="notes">
+  <h2>Notes</h2>
+  <ul>
+    <li><a href="notes/math.pdf" target="_blank">Math Notes</a></li>
+    <li><a href="notes/science.pdf" target="_blank">Science Notes</a></li>
+  </ul>
+</section>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ECE Branch Subjects</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header>
+    <h1>Welcome to ECE Branch</h1>
+    <p>Select a subject to explore resources, notes, and more!</p>
+  </header>
+
+  <main class="subjects">
+    <!-- ACA Subject -->
+    <div class="subject-card">
+      <h2>ACA</h2>
+      <p>Explore topics related to Analog Communication Systems.</p>
+      <button onclick="viewSubject('ACA')">View Resources</button>
+    </div>
+
+    <!-- EDC Subject -->
+    <div class="subject-card">
+      <h2>EDC</h2>
+      <p>Dive into the fundamentals of Electronic Devices and Circuits.</p>
+      <button onclick="viewSubject('EDC')">View Resources</button>
+    </div>
+
+    <!-- MPMC Subject -->
+    <div class="subject-card">
+      <h2>MPMC</h2>
+      <p>Learn about Microprocessors and Microcontrollers in-depth.</p>
+      <button onclick="viewSubject('MPMC')">View Resources</button>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 E
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Arial", sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.login-box {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  width: 400px;
+}
+
+.login-box h2 {
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  color: #333;
+}
+
+.input-group {
+  margin-bottom: 1rem;
+  text-align: left;
+}
+
+.input-group label {
+  font-size: 0.9rem;
+  display: block;
+  margin-bottom: 0.3rem;
+  color: #555;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 0.8rem;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  outline: none;
+}
+
+.input-group input:focus {
+  border-color: #6a11cb;
+  box-shadow: 0 0 5px rgba(106, 17, 203, 0.5);
+}
+
+.forgot-password {
+  margin-bottom: 1rem;
+  text-align: right;
+}
+
+.forgot-password a {
+  color: #6a11cb;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.forgot-password a:hover {
+  text-decoration: underline;
+}
+
+.btn {
+  width: 100%;
+  padding: 0.8rem;
+  background: linear-gradient(90deg, #6a11cb, #2575fc);
+  color: #fff;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.btn:hover {
+  background: linear-gradient(90deg, #2575fc, #6a11cb);
+}
+
+.social-login {
+  margin-top: 1.5rem;
+  text-align: center;
+}
+
+.social-login p {
+  color: #666;
+  margin-bottom: 0.5rem;
+}
+
+.social-icons a {
+  text-decoration: none;
+  color: white;
+  font-size: 1.2rem;
+  width: 40px;
+  height: 40px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  margin: 0 5px;
+}
+
+.social-icons a.facebook {
+  background: #3b5998;
+}
+
+.social-icons a.twitter {
+  background: #1da1f2;
+}
+
+.social-icons a.google {
+  background: #db4437;
+}
+
+.social-icons a:hover {
+  opacity: 0.8;
+}
+
+.signup-link {
+  margin-top: 1rem;
+  color: #666;
+}
+
+.signup-link a {
+  color: #6a11cb;
+  text-decoration: none;
+}
+
+.signup-link a:hover {
+  text-decoration: underline;
+}
+
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to bottom, #e3f2fd, #bbdefb);
+  color: #333;
+  text-align: center;
+}
+
+header {
+  background-color: #1976d2;
+  color: white;
+  padding: 2rem 1rem;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  margin: 0;
+}
+
+header p {
+  font-size: 1.2rem;
+  margin: 0.5rem 0 0;
+}
+
+.subjects {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 2rem 1rem;
+}
+
+.subject-card {
+  background: white;
+  border: 2px solid #1976d2;
+  border-radius: 8px;
+  width: 300px;
+  padding: 1rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.subject-card h2 {
+  color: #1976d2;
+  font-size: 1.5rem;
+  margin: 0.5rem 0;
+}
+
+.subject-card p {
+  font-size: 1rem;
+  margin: 0.5rem 0 1.5rem;
+}
+
+.subject-card button {
+  background-color: #1976d2;
+  color: white;
+  border: none;
+  padding: 0.7rem 1.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.subject-card button:hover {
+  background-color: #004ba0;
+}
+
+.subject-card:hover {
+  transform: translateY(-5px);
+}
+
+footer {
+  background-color: #1976d2;
+  color: white;
+  padding: 1rem;
+  margin-top: 2rem;
+  font-size: 0.9rem;
+}
+// Handle login form submission
+document.querySelector("#login-form").addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  const username = document.querySelector("#username").value;
+  const password = document.querySelector("#password").value;
+
+  if (username && password) {
+    alert(`Login Successful!\nUsername: ${username}`);
+    document.querySelector("#login-form").reset();
+  } else {
+    alert("Please enter both username and password.");
+  }
+});
+document.querySelector("#login-form").addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  const email = document.querySelector("#email").value;
+  const password = document.querySelector("#password").value;
+
+  if (email === "test@example.com" && password === "password123") {
+    alert("Login Successful!");
+  } else {
+    alert("Invalid email or password!");
+  }
+});
+// Save user data during registration
+localStorage.setItem("userEmail", email);
+localStorage.setItem("userPassword", password);
+
+// Retrieve user data during login
+const storedEmail = localStorage.getItem("userEmail");
+const storedPassword = localStorage.getItem("userPassword");
+
+if (email === storedEmail && password === storedPassword) {
+  alert("Login Successful!");
+} else {
+  alert("Invalid Credentials");
+}
+window.location.href = "dashboard.html";
+// script.js
+// Function to handle subject card click
+function viewSubject(subject) {
+  alert(`Redirecting to ${subject} resources...`);
+  // Redirect to a new page or section (Replace with actual links later)
+  if (subject === "ACA") {
+    window.location.href = "aca.html";
+  } else if (subject === "EDC") {
+    window.location.href = "edc.html";
+  } else if (subject === "MPMC") {
+    window.location.href = "mpmc.html";
+  }
+}
